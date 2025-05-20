@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <title>Menu fixe avec flèches</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container-commande">
+
+    <!-- Nouveau wrapper flex pour menu-wrapper + order-summary -->
+    <div id="header-wrapper">
+      <div id="menu-wrapper">
+        <button id="left-arrow" class="arrow">
+          <img src="./annexe/images/fleche-slider.png" alt="Flèche gauche" />
+        </button>
+        <div id="menu" class="menu-scroll">
+          <!-- Les boutons de catégorie générés dynamiquement apparaîtront ici -->
+        </div>
+        <button id="right-arrow" class="arrow">
+          <img src="./annexe/images/fleche-slider2.png" alt="Flèche droite" />
+        </button>
+      </div>
+
+      <div id="order-summary">
+        <h2>Votre commande</h2>
+        <p id="selection-type"></p>
+
+        <div id="order-items">
+          <ul id="panier-list"></ul>
+        </div>
+
+        <p>Total: <span id="order-total"></span></p>
+
+        <div id="order-actions">
+          <button id="cancel-order" onclick="abandon()">Abandon</button>
+          <button id="pay-order" onclick="redirigerVersChevalet()">Payer</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="product-container">
+      <!-- Les produits s'afficheront ici -->
+    </div>
+
+    <div id="popup" class="hidden"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

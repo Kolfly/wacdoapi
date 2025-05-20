@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <title>Ton chevalet</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <img src="./annexe/images/fondchoix1.png" alt="Logo de McDonald's" class="image-fond-chevalet">
+
+    <div id="chevalet-contenair">
+      <img src="" alt="">
+        <h2>Pour etre servis a table,</h2>
+        <p>Recuperez un chevalet et indiquez ici le numero inscrit dessus</p>
+        <div class="code-inputs">
+            <input type="text" maxlength="1" class="code-chevalet" id="n1" oninput="moveToNext(this, 'n2')" />
+            <input type="text" maxlength="1" class="code-chevalet" id="n2" oninput="moveToNext(this, 'n3')" />
+            <input type="text" maxlength="1" class="code-chevalet" id="n3" oninput="moveToNext(this, null)" />
+          </div>
+          
+    </div>
+    <button onclick="addchevalet()" id="chevalet-button">Ajouter le chevalet</button>
+</body>
