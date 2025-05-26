@@ -25,18 +25,22 @@
       </div>
 
       <div id="order-summary">
-        <h2>Votre commande</h2>
+        <img src="./annexe/images/logo.png" alt="logo-wacdo" id="logo-wacdo" />
+        <h2 id="votreCommande">Votre commande</h2>
         <p id="selection-type"></p>
-
+        <hr class="order-separator" />
         <div id="order-items">
           <ul id="panier-list"></ul>
-        </div>
-
-        <p>Total: <span id="order-total"></span></p>
+        </div >
+        
+        <div id="bottom-order">
+          <hr class="order-separator" />
+        <p id="total-text">TOTAL (ttc) <span id="order-total"></span></p>
 
         <div id="order-actions">
           <button id="cancel-order" onclick="abandon()">Abandon</button>
           <button id="pay-order" onclick="redirigerVersChevalet()">Payer</button>
+        </div>
         </div>
       </div>
     </div>

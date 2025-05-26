@@ -387,10 +387,28 @@ function afficherPanier() {
         const ul = document.createElement("ul");
         ul.classList.add("article-block");
 
-        // Affiche le produit principal dans un h2 
+        // Crée le titre avec le bouton de suppression
         const liTitle = document.createElement("li");
         liTitle.classList.add("li-title");
-        liTitle.innerHTML = `<h2>${articleData[0].name}</h2>`;
+
+        const titleContainer = document.createElement("div");
+        titleContainer.classList.add("title-container");
+
+        const titleText = document.createElement("h2");
+        titleText.textContent = articleData[0].name;
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.innerHTML = `<img src='./annexe/images/trash.png' alt='Supprimer' class='delete-icon'>`;
+        deleteBtn.classList.add("delete-button");
+        deleteBtn.addEventListener("click", () => {
+          localStorage.removeItem(key);
+          afficherPanier();
+          calculerTotalPrixArticles();
+        });
+
+        titleContainer.appendChild(titleText);
+        titleContainer.appendChild(deleteBtn);
+        liTitle.appendChild(titleContainer);
         ul.appendChild(liTitle);
 
         // Affiche les composants 
@@ -407,6 +425,7 @@ function afficherPanier() {
     }
   }
 }
+
 // renvoi vers la fin ou le chevalet suivant la selection
 function redirigerVersChevalet() {
   const selection = localStorage.getItem('selection');

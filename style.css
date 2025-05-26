@@ -4,6 +4,14 @@ body {
 }
 
 /* Page des choix sur place ou à emporter */
+
+.image-fond-selection{
+  width: 1900px;
+  height: 775px;
+  top: -7px;
+  left: -164px;
+  position: absolute;
+}
 .container {
   background-color: white;
   min-height: 100vh;
@@ -13,15 +21,10 @@ body {
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 580px) {
-  .menu-box {
-    margin-left: -150px;
-  }
-}
 
 .menu-box {
-  width: 698px;
-  max-width: 517px;
+  width:  698px;
+  height: 517px;
   position: absolute;
   top: 244px;
   left: 287px;
@@ -32,30 +35,108 @@ body {
   flex-direction: column;
   gap: 64px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
 }
+@media (max-width: 1000px) {
+  .menu-box {
+    margin-left: 100px;
+    margin-top: 240px;
+    
 
+  }
+}
+@media screen and (max-width: 650px) {
+  .menu-box {
+    width: 1000px !important;
+    height: 700px !important;
+    margin-left: -150px;
+  }
+  .menu-content {
+    max-width: 900px !important;
+    width: 100%;
+  }
+  .h2selection{
+    width: 300px;
+    height: 53px;
+    font-size: 80px !important;
+    line-height: 100%;
+    font-weight: 700;
+    letter-spacing: 0%;
+  }
+  .text-selection{
+    width: 900px;
+    height: 66px;
+    font-weight: 700;
+    font-size: 35px !important;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+  .button-group {
+    top: 500px !important;
+    gap: 100px !important;
+    
+  }
+  #menu-button {
+    width: 500px !important;
+    height: 250px !important;
+    margin-top: 100px !important;
+  }
+  #image-selection {
+    width: 160px !important;
+    height: 110px !important;
+    top: 50px !important;
+    left: 100px !important;
+  }
+  .text-button{
+    width: 200px !important;
+    height: 50px !important;
+    top: 200px !important;
+    left: 100px !important;
+    font-weight: 700;
+    font-size: 35px !important;
+    line-height: 100%;
+    letter-spacing: 0%;
+    
+  }
+}
+@media screen and (max-width: 420px) {
+  .menu-box {
+   margin-left: -250px;
+}
+.text-selection{
+  width: 100%;
+  height: 66px;
+  font-weight: 700;
+  font-size: 42px !important;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.text-button{
+  width: 100%;
+  height: 50px !important;
+  top: 200px !important;
+  left: 100px !important;
+  font-weight: 700;
+  font-size: 42px !important;
+  line-height: 100%;
+  letter-spacing: 0%;
+}}
+@media screen and (max-width: 400px) {
+  .menu-box {
+    width: 700px !important;
+    height: auto;
+    padding: 20px;
+    margin-left: -150px;
+  }
+
+  
+}
 .menu-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   max-width: 600px;
   width: 100%;
-}
-
-.menu-content h2 {
-  font-weight: 800;
-  color: black;
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.menu-content p {
-  font-weight: 700;
-  color: black;
-  font-size: 0.875rem;
-  max-width: 28rem;
-  line-height: 1.25;
-  margin-bottom: 1.5rem;
 }
 
 .button-group {
@@ -72,21 +153,47 @@ body {
   box-sizing: border-box;
   cursor: pointer;
   transition: transform 0.2s ease;
+  margin-top: 90px;
+  
+  
+}
+.h2selection{
+  width: 158px;
+  height: 53px;
+  font-size: 42px;
+  line-height: 100%;
+  font-weight: 700;
+  letter-spacing: 0%;
+}
+.text-selection{
+  width: 566px;
+  height: 66px;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
 }
 #image-selection {
   width: 141px;
   height: 96px;
-  margin-bottom: 1rem;
+  top: 48px;
+  left: 72px;
+ 
 }
 #menu-button:hover {
   transform: scale(1.05);
 }
-#menu-button span {
+.text-button{
+  width: 130px;
+  height: 33px;
+  top: 141px;
+  left: 77px;
   font-weight: 700;
-  color: black;
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
-  display: block;
+  font-size: 26px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  
   text-align: center;
 }
 
@@ -153,8 +260,8 @@ body {
   flex-wrap: wrap;
   gap: 15px;
   padding: 20px;
-  margin-top: clamp(180px, 15vh, 200px); /* Laisse de la place pour le menu fixe */
-  margin-left: 132px;
+  margin-top: clamp(180px, 15vh, 180px); /* Laisse de la place pour le menu fixe */
+  margin-left: 115px;
   margin-right: 309px; /* Laisse de la place au résumé */
   box-sizing: border-box;
   background-color: #ffffff;
@@ -175,6 +282,12 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s;
+  left: -90px;
+}
+#product-container [id^="PriceId"]{
+
+margin-top: -10px;
+ 
 }
 
 /* Récapitulatif commande */
@@ -193,6 +306,8 @@ body {
 
 #order-summary h2 {
   margin-top: 0;
+  font-size: 14px;
+ 
 }
 #order-items {
   list-style: none;
@@ -200,19 +315,88 @@ body {
   margin: 10px 0;
 }
 #order-items li {
-  border-bottom: 1px solid #aca4a4;
-  padding: 5px 0;
+  
+  padding: 0px; 
+  font-size: 14px;
+  margin-left: 0;
+  margin-bottom: px;
 }
 #order-actions {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
+  margin-top: 50px;
 }
 #order-actions button {
   flex: 1;
   padding: 10px;
   margin: 0 5px;
   cursor: pointer;
+}
+#bottom-order{
+  margin-top: 10%;
+  
+  
+}
+.li-title{
+  list-style: none;
+}
+.delete-button{
+  border: none;
+  width: 24px;
+  height: 24px;
+}
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* ou 'start' si tu veux le bouton juste à côté du texte */
+  gap: 5px; /* facultatif, espace entre le h2 et le bouton */
+}
+.order-separator {
+  border-top: 1.5px solid #000000;
+  margin: 10px 0;
+}
+#order-total{
+  width: 115px;
+  height: 53px;
+  font-weight: 400;
+  font-size: 42px;
+  align-items: center;
+  white-space: nowrap;
+  display: inline;
+  
+}
+#total-text{
+  width: 59px;
+  height: 56px;
+  font-weight: 400;
+  font-size: 22px;
+gap: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#logo-wacdo{
+  margin-left: 50%;
+  margin-right: 50%;
+  padding-bottom: 25px;
+  margin-top:20px
+}
+#cancel-order{
+  width: 125px;
+  height: 52px;
+  border-radius: 8px;
+  border: 2px solid #000000;
+  padding: 16px 32px 16px 32px;
+  gap:10px
+}
+#pay-order{
+  width: 110px;
+  height: 55px;
+  border-radius: 8px;
+  padding: 16px 32px 16px 32px;
+  background-color: #FFC836;
+  gap: 10px;
+  border: none;
 }
 
 /* Popup */
@@ -417,7 +601,14 @@ input[type=number] {
       margin:50;
       padding: 50px;
     }
+    #bottom-order {
+      
+      margin-top: 0px !important;
+    }
   
+  }
+  .fin-container {
+    /*rajouter le rersponsive */
   }
 }
 
