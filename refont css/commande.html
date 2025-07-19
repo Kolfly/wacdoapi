@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <title>Menu fixe avec flèches</title>
+  <link rel="stylesheet" href="./style2.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-85">
+
+        <header id="container-cat">
+            <button id="left-arrow" class="arrow ">
+             <img src="./annexe/images/fleche-slider.png" alt="Flèche gauche" />
+            </button>
+  
+            <div id="menu" class="menu-scroll ">
+             <!-- Les boutons de catégorie .cat-button>.image-menu générés dynamiquement apparaîtront ici -->
+           </div>
+  
+            <button id="right-arrow" class="arrow ">
+             <img src="./annexe/images/fleche-slider2.png" alt="Flèche droite" />
+            </button>
+        </header>
+  
+       <section class="con-section">
+  
+         <div id="product-container" class="row gap-10">
+           <!-- Les produits .product-button>.image-product s'afficheront ici -->
+         </div>
+  
+       </section>
+  
+    
+      </div>
+      <div id="col-15" class="col-15 absolute">
+
+        <div id="container-order ">
+      
+            <div id="order-summary" class="order-summary ">
+      
+              <img src="./annexe/images/logo.png" alt="logo-wacdo" id="logo-wacdo" />
+      
+              <h2 id="votreCommande">Votre commande</h2>
+      
+              <p id="selection-type"></p>
+      
+              <hr class="order-separator" />
+      
+              <div id="order-items">
+      
+                <ul id="panier-list"></ul>
+      
+              </div >
+             
+      
+            </div>
+      
+          </div>
+          
+          <footer>
+            
+    
+              <hr class="order-separator" />
+    
+              <div class="container-total-text">
+    
+               <p id="total-text"><span id="text-total">TOTAL (ttc)</span> <span id="order-total"></span></p>
+    
+             </div>
+              
+              <div id="order-actions">
+    
+                 <button id="cancel-order" onclick="abandon()" class="payement-button">Abandon</button>
+                 <button id="pay-order" onclick="redirigerVersChevalet()" class="payement-button">Payer</button>
+    
+              </div>
+              
+              <button id="order-toggle" onclick="toggle()"><strong>^</strong> Détail commande</button>
+          </footer>
+      
+        </div>
+
+    </div>
+
+    <div id="popup" class="hidden"><div id="popup-element"></div></div>
+ 
+</div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

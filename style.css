@@ -14,18 +14,18 @@ body {
 }
 .container {
   background-color: white;
-  min-height: 100vh;
-  display: flex;
+ min-height: 100vh;
+ display: flex;
   flex-direction: column;
   position: relative;
   justify-content: center;
   align-items: center;
+  
 }
 
 .menu-box {
   width:  698px;
   height: 517px;
-  position: absolute;
   top: 244px;
   left: 287px;
   background-color: white;
@@ -36,6 +36,7 @@ body {
   gap: 64px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   align-items: center;
+  z-index: 1000;;
 }
 @media (max-width: 1000px) {
   .menu-box {
@@ -61,7 +62,7 @@ body {
     font-size: 80px !important;
     line-height: 100%;
     font-weight: 700;
-    letter-spacing: 0%;
+    
   }
   .text-selection{
     width: 900px;
@@ -69,7 +70,7 @@ body {
     font-weight: 700;
     font-size: 35px !important;
     line-height: 100%;
-    letter-spacing: 0%;
+    
   }
   .button-group {
     top: 500px !important;
@@ -95,7 +96,7 @@ body {
     font-weight: 700;
     font-size: 35px !important;
     line-height: 100%;
-    letter-spacing: 0%;
+    
     
   }
 }
@@ -109,7 +110,7 @@ body {
   font-weight: 700;
   font-size: 42px !important;
   line-height: 100%;
-  letter-spacing: 0%;
+  
 }
 .text-button{
   width: 100%;
@@ -119,7 +120,7 @@ body {
   font-weight: 700;
   font-size: 42px !important;
   line-height: 100%;
-  letter-spacing: 0%;
+  
 }}
 @media screen and (max-width: 400px) {
   .menu-box {
@@ -163,7 +164,7 @@ body {
   font-size: 42px;
   line-height: 100%;
   font-weight: 700;
-  letter-spacing: 0%;
+  
 }
 .text-selection{
   width: 566px;
@@ -171,7 +172,7 @@ body {
   font-weight: 700;
   font-size: 26px;
   line-height: 100%;
-  letter-spacing: 0%;
+  
 
 }
 #image-selection {
@@ -192,7 +193,7 @@ body {
   font-weight: 700;
   font-size: 26px;
   line-height: 100%;
-  letter-spacing: 0%;
+  
   
   text-align: center;
 }
@@ -319,7 +320,7 @@ margin-top: -10px;
   padding: 0px; 
   font-size: 14px;
   margin-left: 0;
-  margin-bottom: px;
+  margin-bottom: 0px;
 }
 #order-actions {
   display: flex;
@@ -552,7 +553,7 @@ input[type=number] {
 /* === responsive ===  */
 
 @media (max-width: 900px){
-  @media (max-width: 900px) {
+ 
     #order-summary {
       position: fixed;
       top: auto;
@@ -568,6 +569,14 @@ input[type=number] {
       padding: 10px 15px;
       overflow-y: auto;
       text-align: center;
+    }
+    .container-total-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #text-total{
+      display: none;
     }
   
     #order-summary h2 {
@@ -598,18 +607,70 @@ input[type=number] {
     }
     #chevalet-contenair {
       max-width: 50%;
-      margin:50;
+      margin:50px;
       padding: 50px;
     }
     #bottom-order {
       
       margin-top: 0px !important;
     }
+  .menu-box {
+    width: 70% ! important;
+    height: auto !important;
+    padding: 20px;
+    margin-left: 0;
+    margin-top: 20px;
+    font-size:10px !important;
+  }
+  .text-selection {
+    width: 100%;
+    height: auto;
+    font-weight: 700;
+    font-size: 20px !important;
+    line-height: 100%;
+    
+  }
+  .button-group {
+   
+    margin-left: 34%; ;
+    margin-top: 20px;
+    width: 30% !important;
+    height: auto;
+  }
+  #menu-button {
+    width: 120% !important;
+    height: auto !important;
+    margin-top: 0;
+  }
+  #image-selection {
+    width: 100px !important;
+    height: 70px !important;
+    top: 20px !important;
+    left: 50px !important;
+  }
+  .text-button {
+    width: 100%;
+    height: auto !important;
+    top: 100px !important;
+    left: 50px !important;
+    font-weight: 700;
+    font-size: 20px !important;
+    line-height: 100%;
+    
+    text-align: center;
+  }
+  .h2selection {
+    width: 100%;
+    height: auto;
+    font-size: 30px !important;
+    line-height: 100%;
+    font-weight: 700;
+    
+    text-align: center;
+  }
   
-  }
-  .fin-container {
-    /*rajouter le rersponsive */
-  }
+
+
 }
 
 @media (max-width:400px){
@@ -624,23 +685,100 @@ input[type=number] {
 }
 @media (max-width: 700px){
   #chevalet-contenair {
-   max-width: 100%;
+   
    width: 800px;
    height: 400px;
    margin-left: 50px;
    font-size: 30px;  
+   margin-top: 100px;
+  }
+  #chevalet-button {
+    width: 300px;
+    height:auto;
+    font-size: 30px;
+    margin-left: 100px;
   }
   #fin-container {
-   max-width: 100%;
-   width: 800px;
+  
+   width: 850px;
    height: auto;
    margin-left: 50px;
-   font-size: 30px;  
+   font-size: 30px; 
+   padding: 0px; 
+   margin-top: -10px;
+   text-align: center;
   }
   #fin-button {
     width: auto;
     height: auto;
     font-size: 30px;
-    margin-left: 150px;
+    margin-left: 70px;
+  }
+}
+@media (max-width: 450px){
+  #chevalet-contenair {
+  
+   width: auto !important;
+   height: auto;
+   margin-left: 50px;
+   font-size: 30px;  
+  }
+  #chevalet-button {
+    width: auto !important;
+    height: auto;
+    font-size: 30px;
+    margin-left: 80px !important;
+    text-align: center;
+  }
+  #fin-container {
+  
+   width: 300px;
+   height: auto;
+   margin-left: 10px;
+   font-size: 20px; 
+   padding: 0px;
+   margin-top: -20px;
+  }
+  #fin-button {
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    margin-left: 50px;
+  }
+}
+@media (max-width: 600px){
+  #chevalet-contenair {
+  
+   width: 250px;
+   height: auto;
+   margin-left: 50px;
+   font-size: 20px;  
+  }
+  #chevalet-button {
+    width: 250px;
+    height: auto;
+    font-size: 20px;
+    margin-left: 100px;
+    text-align: center;
+  }
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    
+  }
+  #menu-button {
+    width: 100% !important;
+    height: auto;
+    margin-top: 20px;
+    margin: 5%;
+  }
+  .product-button{
+    width: 100% !important;
+    height: auto !important;
+    margin-top: 20px;
+    margin-left: 0%;
+    margin-right: 50%;
+    justify-content: center !important;
   }
 }

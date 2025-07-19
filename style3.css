@@ -1,0 +1,607 @@
+/* ---------------------------
+   Global & Reset
+--------------------------- */
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+  }
+  
+  /* ---------------------------
+     Images de fond
+  --------------------------- */
+  .image-fond-selection {
+    position: absolute;
+    width: 1900px;
+    height: 775px;
+    top: -7px;
+    left: -164px;
+  }
+  .image-fond-chevalet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    display: flex;
+    z-index: -1;
+  }
+  
+  /* ---------------------------
+     Conteneur général
+  --------------------------- */
+  .container {
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* ---------------------------
+     Menu Box & Contenu
+  --------------------------- */
+  .menu-box {
+    width: 698px;
+    height: 517px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    /* Remarque : les propriétés top/left n’ayant pas de position définie ici,
+       elles ne sont pas effectives – à revoir si besoin */
+    z-index: 1000;
+  }
+  .menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 600px;
+    width: 100%;
+  }
+  .button-group {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  /* ---------------------------
+     Boutons et Images
+  --------------------------- */
+  #menu-button {
+    width: 285px;
+    height: 202px;
+    border-radius: 8px;
+    border: 8px solid #FFC836;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin-top: 90px;
+  }
+  #menu-button:hover {
+    transform: scale(1.05);
+  }
+  .h2selection {
+    width: 158px;
+    height: 53px;
+    font-size: 42px;
+    line-height: 100%;
+    font-weight: 700;
+    letter-spacing: 0%;
+  }
+  .text-selection {
+    width: 566px;
+    height: 66px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+  #image-selection {
+    position: relative; /* Assurer le positionnement si nécessaire */
+    width: 141px;
+    height: 96px;
+    top: 48px;
+    left: 72px;
+  }
+  .text-button {
+    width: 130px;
+    height: 33px;
+    position: relative;
+    top: 141px;
+    left: 77px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+  
+  /* ---------------------------
+     Menu fixe
+  --------------------------- */
+  #menu-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 352px);
+    height: clamp(80px, 18vh, 1141px);
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(6px, 2vh, 20px);
+    box-sizing: border-box;
+    z-index: 1000;
+  }
+  .menu-scroll {
+    flex-grow: 1;
+    overflow-x: hidden;
+    white-space: nowrap;
+    margin: 0 10px;
+  }
+  .arrow {
+    background-color: #ffffff;
+    border: none;
+    width: 86px;
+    height: 56px;
+    display: flex;
+  }
+  .menu-button {
+    background-color: #fff;
+    color: #000;
+    border: 4px solid #FFC836;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 0 10px 0 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+  }
+  .image-menu {
+    width: 80px;
+    height: 70px;
+    margin: 0;
+  }
+  
+  /* ---------------------------
+     Produits
+  --------------------------- */
+  #product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    margin: 180px 309px 0 115px; /* marge-top, marge-droite = place pour menu fixe / order-summary */
+    box-sizing: border-box;
+    background-color: #ffffff;
+  }
+  .image-product {
+    width: 199px;
+    height: 200px;
+  }
+  .product-button {
+    background-color: #fff;
+    width: 199px;
+    height: 296px;
+    border: 1px solid #6E6E6E;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    left: -90px;
+  }
+  #product-container [id^="PriceId"] {
+    margin-top: -10px;
+  }
+  
+  /* ---------------------------
+     Récapitulatif Commande
+  --------------------------- */
+  #order-summary {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 309px;
+    height: 100vh;
+    background-color: #F1F1F1;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    z-index: 999;
+  }
+  #order-summary h2 {
+    margin-top: 0;
+    font-size: 14px;
+  }
+  #order-items {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  #order-items li {
+    padding: 0;
+    font-size: 14px;
+    margin-left: 0;
+  }
+  #order-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+  #order-actions button {
+    flex: 1;
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  #bottom-order {
+    margin-top: 10%;
+  }
+  .li-title {
+    list-style: none;
+  }
+  .delete-button {
+    border: none;
+    width: 24px;
+    height: 24px;
+  }
+  .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+  }
+  .order-separator {
+    border-top: 1.5px solid #000;
+    margin: 10px 0;
+  }
+  #order-total {
+    width: 115px;
+    height: 53px;
+    font-weight: 400;
+    font-size: 42px;
+    align-items: center;
+    white-space: nowrap;
+    display: inline;
+  }
+  #total-text {
+    width: 59px;
+    height: 56px;
+    font-weight: 400;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #logo-wacdo {
+    margin: 20px auto 25px auto;
+    padding-bottom: 25px;
+  }
+  #cancel-order {
+    width: 125px;
+    height: 52px;
+    border-radius: 8px;
+    border: 2px solid #000;
+    padding: 16px 32px;
+    gap: 10px;
+  }
+  #pay-order {
+    width: 110px;
+    height: 55px;
+    border-radius: 8px;
+    padding: 16px 32px;
+    background-color: #FFC836;
+    gap: 10px;
+    border: none;
+  }
+  
+  /* ---------------------------
+     Popup
+  --------------------------- */
+  .hidden {
+    display: none;
+  }
+  #popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+  }
+  .popup-button {
+    width: 285px;
+    height: 202px;
+    border-radius: 8px;
+    border: 8px solid #FFC836;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin: 3px;
+  }
+  .image-popup {
+    width: 165px;
+    height: 124px;
+  }
+  #close-popup {
+    background-color: #fff;
+    border: none;
+  }
+  
+  /* ---------------------------
+     Page Chevalet
+  --------------------------- */
+  #chevalet-contenair {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 380px;
+    margin: 300px auto 0;
+    z-index: 1000;
+  }
+  #chevalet-button {
+    display: flex;
+    margin: 30px auto 0;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: #000;
+    background-color: #FFC836;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  #chevalet-button:hover {
+    background-color: #FFC836;
+  }
+  .code-inputs {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  .code-chevalet {
+    width: 40px;
+    height: 50px;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-bottom: 4px solid #ccc;
+    outline: none;
+    overflow: hidden;
+  }
+  .code-chevalet:focus {
+    border-bottom: 4px solid #333;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+  
+  /* ---------------------------
+     Page Fin
+  --------------------------- */
+  #fin-container {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 380px;
+    margin: 300px auto 0;
+    z-index: 1000;
+  }
+  #fin-button {
+    display: flex;
+    margin: 30px auto 0;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: #000;
+    background-color: #FFC836;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  #fint-button:hover {
+    background-color: #FFC836;
+  }
+  #end-font {
+    font-family: "Allison", cursive;
+    font-size: 48px;
+    font-style: normal;
+  }
+  
+  /* ---------------------------
+     Responsive
+  --------------------------- */
+  @media (max-width: 900px) {
+    #order-summary {
+      position: fixed;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: auto;
+      max-height: 40vh;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+      padding: 10px 15px;
+      text-align: center;
+    }
+    #order-summary h2 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+    #order-items {
+      display: none;
+    }
+    #order-actions {
+      flex-direction: row;
+      gap: 10px;
+    }
+    #order-actions button {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+    #menu-wrapper {
+      width: 100%;
+      left: 0;
+      padding: 10px;
+    }
+    #product-container {
+      margin-right: 0;
+    }
+    #chevalet-contenair {
+      max-width: 50%;
+      margin: 50px auto;
+      padding: 50px;
+    }
+    #bottom-order {
+      margin-top: 0 !important;
+    }
+    .menu-box {
+      width: 70% !important;
+      height: auto !important;
+      padding: 20px;
+      margin: 20px auto 0;
+      font-size: 10px !important;
+    }
+    .text-selection {
+      width: 100%;
+      height: auto;
+      font-size: 20px !important;
+    }
+    .button-group {
+      margin: 20px auto 0;
+      width: 30% !important;
+    }
+    #menu-button {
+      width: 120% !important;
+      margin: 5% auto;
+    }
+    #image-selection {
+      width: 100px !important;
+      height: 70px !important;
+      top: 20px !important;
+      left: 50px !important;
+    }
+    .text-button {
+      width: 100%;
+      position: relative;
+      top: 100px !important;
+      left: 50px !important;
+      font-size: 20px !important;
+    }
+    .h2selection {
+      width: 100%;
+      font-size: 30px !important;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    #product-container {
+      margin-left: 80px;
+      margin-right: 0;
+      padding: 20px;
+    }
+    .image-fond-chevalet {
+      margin-left: -500px;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    #chevalet-contenair {
+      width: 800px;
+      height: 400px;
+      margin-left: 50px;
+      font-size: 30px;  
+      margin-top: 100px;
+    }
+    #chevalet-button {
+      width: 300px;
+      font-size: 30px;
+      margin-left: 100px;
+    }
+    #fin-container {
+      width: 850px;
+      margin-left: 50px;
+      font-size: 30px;
+      padding: 0;
+      margin-top: -10px;
+      text-align: center;
+    }
+    #fin-button {
+      margin-left: 70px;
+      font-size: 30px;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    #chevalet-contenair {
+      width: auto !important;
+      height: auto;
+      margin-left: 50px;
+      font-size: 30px;
+    }
+    #chevalet-button {
+      width: auto !important;
+      font-size: 30px;
+      margin-left: 80px !important;
+      text-align: center;
+    }
+    #fin-container {
+      width: 300px;
+      margin-left: 10px;
+      font-size: 20px;
+      padding: 0;
+      margin-top: -20px;
+    }
+    #fin-button {
+      width: auto;
+      font-size: 20px;
+      margin-left: 50px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    #chevalet-contenair {
+      width: 250px;
+      font-size: 20px;
+      margin-left: 50px;
+    }
+    #chevalet-button {
+      width: 250px;
+      font-size: 20px;
+      margin-left: 100px;
+      text-align: center;
+    }
+    .button-group {
+      flex-direction: column;
+      align-items: center;
+      gap: -100px !important;
+    }
+    #menu-button {
+      width: 200% !important;
+      margin: 20px 5%;
+    }
+  }
+  

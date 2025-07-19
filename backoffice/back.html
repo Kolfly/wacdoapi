@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <title>Back Office</title>
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+    <div id="manager-menu">
+       <button id="add-product" onclick="showAddProductForm()">Ajouter un produit</button>
+       <button id="modif-product" onclick="modifProduct()">Modifie un produit</button>
+        <button id="view-orders" onclick="showOrders()">Voir les commandes</button>
+         <button id="updateUser" onclick="updateUser()">modifie un utilisateur</button>
+        <button id="logout" onclick="logout()">Déconnexion</button>
+    </div>
+
+<div id="showAddProductForm"></div>
+<div id="showOrders"></div>
+<div id="showModifProduct"></div>
+<div id="showUpdateUser"></div>
+<script src="scriptback.js"></script>
+</body>
