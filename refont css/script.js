@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           <button id="close-popup">
             <img class="close-button" src="./annexe/images/supprimer.png">
           </button>
-          <h3>Sélectionnez un produit (${selectionCount + 1}/5)</h3>
+          <!--<h3>Sélectionnez un produit (${selectionCount + 1}/5)</h3>-->
           <h3>${additionalTitles[selectionCount]}</h3>
           <p>${paragraphContents[selectionCount]}</p>
         `;

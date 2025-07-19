@@ -553,6 +553,9 @@ input[type=number] {
 /* === responsive ===  */
 
 @media (max-width: 900px){
+  .col-85{
+    width: 100% !important;
+  }
  
     #order-summary {
       position: fixed;
