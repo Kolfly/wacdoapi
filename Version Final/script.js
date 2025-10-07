@@ -221,8 +221,10 @@ document.addEventListener("DOMContentLoaded", async () => {
           <!--<h3>Sélectionnez un produit (${selectionCount + 1}/5)</h3>-->
           <h3>${additionalTitles[selectionCount]}</h3>
           <p>${paragraphContents[selectionCount]}</p>
+         
         `;
-  
+          const divbuttons = document.createElement("div");
+          divbuttons.classList.add("div-buttons");
         selectableProducts.forEach(item => {
           const itemButton = document.createElement("button");
           itemButton.classList.add("popup-button");
@@ -232,9 +234,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             <br>
             ${item.name} - ${item.price} €
           `;
-          popup.appendChild(itemButton);
+          divbuttons.appendChild(itemButton);
         });
-  
+        popup.appendChild(divbuttons);
         popup.style.display = "block";
   
         document.getElementById("close-popup").addEventListener("click", () => {

@@ -364,6 +364,12 @@ footer {
   #pop-up p {
     padding-bottom: 20px;
   }
+  .div-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
   
   /* Comportement mobile pour le col-15 */
   @media (max-width: 935px) {
